@@ -36,11 +36,21 @@ class List():
     def getExpenses (self):
         return self.expense
     
-    def addExpense(self):
+    def addExpense(self,newExpense):
+        self.expense.append(newExpense)
+        
+    def __str__(self):
+        for x in (self.expense):
+            print (x)
+        return ("")
+    
+    def makeExpense(self):
         print ("To add an expense please give the folowing information")
         newDesc = input("Add a small description of the new expense: ")
         newCategory = input("Add a category for the new expense: ")
         newAmount = input("Give the amount of the new expense: ")
+        newExpense = Expenses(newDesc,newCategory,newAmount)
+        self.addExpense(newExpense)
         
     def deleteExpense():
     print("no")
@@ -49,13 +59,11 @@ class List():
         categorySet = set()
         for i in self.expense:
             if i.getCategory is not in categorySet:
-                
-                
-        
-    
 
 def main():
     #Main code to run
+    global listEx
+    listEx = List()
     menu()
     
 def menu():
@@ -95,11 +103,11 @@ def editPage():
         editChoice = input("Select an option:")
         
         if editChoice == "1":
-            addExpense()
+            listEx.makeExpense()
         
         if editChoice == "2":
-            deleteExpense()
-            
+            ListEx.deleteExpense()
+
         if editChoice == "3":
             menu()
 
