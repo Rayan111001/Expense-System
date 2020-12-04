@@ -39,26 +39,26 @@ def main():
 def menu():
     #Menu options
     #3 options analysis, edit and exit
-    print("""Menu:
-             1. Analysis mode
-             2. Edit mode
-             3. Exit\n""")
-    choice = input("Select an option:")
-    
-    if choice == "1":
-        analysis()
+    while True:
+        print("""Menu:
+                1. Analysis mode
+                2. Edit mode
+                3. Exit\n""")
+        choice = input("Select an option:")
         
-    if choice == "2":
-        editPage()
-        
-    if choice == "3":
-        exit()
+        if choice == "1":
+            analysis()
+            
+        if choice == "2":
+            editPage()
+            
+        if choice == "3":
+            exit()
     
 def analysis():
-    print("no")
-    #Print items, category totals, average
-    #and totals
-    print(no)
+    #Print category totals, average and totals
+    
+    
     
 def addExpense():
     print ("To add an expense please give the folowing information")
@@ -71,11 +71,10 @@ def deleteExpense():
     
 def editPage():
     #Add expense, delete items and exit
-<<<<<<< HEAD
     while True:
         print("""Menu:
-            1. Add expence
-            2. Delete expence
+            1. Add expense
+            2. Delete expense
             3. Exit\n""")
         editChoice = input("Select an option:")
         
@@ -84,12 +83,9 @@ def editPage():
         
         if editChoice == "2":
             deleteExpense()
+            
         if editChoice == "3":
-            break
-    
-=======
-    print(no)
->>>>>>> 09ca1fb10c4974d9ce429dc28e917f4111348924
+            menu()
     
 if __name__ == "__main__":
     #Runs the program
