@@ -28,7 +28,19 @@ class Expenses():
         
     def __str__(self):
         return(f"Description: {self.description}\nCategory: {self.category}\nAmount: {self.amount:.2f}")
+
+class List():
+    def __init__(self):
+        self.expense = []
     
+    def getExpenses (self):
+        return self.expense
+    
+    def addExpense():
+        print ("To add an expense please give the folowing information")
+        newDesc = input("Add a small description of the new expense: ")
+        newCategory = input("Add a category for the new expense: ")
+        newAmount = input("Give the amount of the new expense: ")  
         
     
 
@@ -60,11 +72,8 @@ def analysis():
     
     
     
-def addExpense():
-    print ("To add an expense please give the folowing information")
-    newDesc = input("Add a small description of the new expense: ")
-    newCategory = input("Add a category for the new expense: ")
-    newAmount = input("Give the amount of the new expense: ")
+
+    
 
 def deleteExpense():
     print("no")
@@ -86,7 +95,7 @@ def editPage():
             
         if editChoice == "3":
             menu()
-    
+
 if __name__ == "__main__":
     #Runs the program
     main()
