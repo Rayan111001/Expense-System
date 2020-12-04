@@ -16,5 +16,6 @@ def editPage():
     #Add expense, delete items and exit
     
 if __name__ = "__main__":
+    #Runs the program
     main()
     
