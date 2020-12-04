@@ -36,11 +36,21 @@ class List():
     def getExpenses (self):
         return self.expense
     
-    def addExpense():
+    def addExpense(self):
         print ("To add an expense please give the folowing information")
         newDesc = input("Add a small description of the new expense: ")
         newCategory = input("Add a category for the new expense: ")
-        newAmount = input("Give the amount of the new expense: ")  
+        newAmount = input("Give the amount of the new expense: ")
+        
+    def deleteExpense():
+    print("no")
+    
+    def categoryTotals(self):
+        categorySet = set()
+        for i in self.expense:
+            if i.getCategory is not in categorySet:
+                
+                
         
     
 
@@ -73,10 +83,7 @@ def analysis():
     
     
 
-    
 
-def deleteExpense():
-    print("no")
     
 def editPage():
     #Add expense, delete items and exit
