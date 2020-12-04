@@ -28,7 +28,19 @@ class Expenses():
         
     def __str__(self):
         return(f"Description: {self.description}\nCategory: {self.category}\nAmount: {self.amount:.2f}")
+
+class List():
+    def __init__(self):
+        self.expense = []
     
+    def getExpenses (self):
+        return self.expense
+    
+    def addExpense():
+        print ("To add an expense please give the folowing information")
+        newDesc = input("Add a small description of the new expense: ")
+        newCategory = input("Add a category for the new expense: ")
+        newAmount = input("Give the amount of the new expense: ")  
         
     
 
@@ -60,22 +72,19 @@ def analysis():
     #and totals
     print(no)
     
-def addExpense():
-    print ("To add an expense please give the folowing information")
-    newDesc = input("Add a small description of the new expense: ")
-    newCategory = input("Add a category for the new expense: ")
-    newAmount = input("Give the amount of the new expense: ")
+
+    
 
 def deleteExpense():
     print("no")
     
 def editPage():
     #Add expense, delete items and exit
-<<<<<<< HEAD
+
     while True:
         print("""Menu:
-            1. Add expence
-            2. Delete expence
+            1. Add expense
+            2. Delete expense
             3. Exit\n""")
         editChoice = input("Select an option:")
         
@@ -86,10 +95,8 @@ def editPage():
             deleteExpense()
         if editChoice == "3":
             break
-    
-=======
-    print(no)
->>>>>>> 09ca1fb10c4974d9ce429dc28e917f4111348924
+
+
     
 if __name__ == "__main__":
     #Runs the program
