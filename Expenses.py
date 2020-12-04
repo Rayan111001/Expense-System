@@ -33,8 +33,6 @@ class Expenses():
     
 
 def main():
-    expense1 = Expenses("burger","Food",5)
-    print(expense1)
     #Main code to run
     menu()
     
