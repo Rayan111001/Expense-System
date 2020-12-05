@@ -152,9 +152,9 @@ def analysis():
     print("\nCategory totals:")
     listEx.categoryTotals()
     print("\nAverage spend per item:")
-    print(listEx.avgSpend())
+    print(f"£{listEx.avgSpend():.2f}")
     print("\nTotal expenditure:")
-    print(listEx.totalExpenditure())
+    print(f"£{listEx.totalExpenditure():.2f}")
     
     
     
