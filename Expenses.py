@@ -53,12 +53,22 @@ class List():
         self.addExpense(newExpense)
         
     def deleteExpense():
-    print("no")
+        print("no")
     
     def categoryTotals(self):
         categorySet = set()
         for i in self.expense:
-            if i.getCategory is not in categorySet:
+            total = 0
+            if i.getCategory() not in categorySet:
+                category = i.getCategory()
+                categorySet.add(category)
+                for n in self.expense:
+                    if n.getCategory() == category:
+                        total += float(n.getAmount())
+                print(f"{category}: £{total:.2f}")
+                    
+                    
+                    
 
 def main():
     #Main code to run
@@ -87,6 +97,8 @@ def menu():
     
 def analysis():
     #Print category totals, average and totals
+    print("Category totals:")
+    listEx.categoryTotals()
     
     
     
