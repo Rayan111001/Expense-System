@@ -46,14 +46,52 @@ class List():
     
     def makeExpense(self):
         print ("To add an expense please give the folowing information")
-        newDesc = input("Add a small description of the new expense: ")
-        newCategory = input("Add a category for the new expense: ")
-        newAmount = input("Give the amount of the new expense: ")
+        while True:
+            newDesc = input("Add a small description of the new expense: ")
+            if newDesc == "":
+                print ("please give an input")
+            else:
+                break
+
+        while True:
+            newCategory = input("Add a category for the new expense: ")
+            if newCategory == "":
+                print ("please give an input")
+            else:
+                break
+            
+        while True:
+            newAmount = input("Give the amount of the new expense: ")
+            try :
+                float(newAmount)
+                break
+            except:
+                print("An error occurred (please enter a valid float)")
+            
         newExpense = Expenses(newDesc,newCategory,newAmount)
         self.addExpense(newExpense)
         
-    def deleteExpense():
-        print("no")
+    def deleteExpense(self):
+        while True:
+            pos = 0
+            for x in self.expense:
+                description = x.getDescription()
+                category = x.getCategory()
+                amount = x.getAmount()
+                print (pos,") ",description,":",category,"£",amount)
+                pos += 1
+            delChoice=input ("Please select which expense to delete (input -1 to exit): ")
+            try:
+                int(delChoice)
+                if (int (delChoice)<pos and int(delChoice)>=-1):                                                                                    
+                    break
+            except:
+                print("Please give an int")
+        if (int(delChoice) == -1):
+            print("")
+        else:
+            del self.expense[int(delChoice)]
+        
     
     def categoryTotals(self):
         categorySet = set()
@@ -118,7 +156,7 @@ def editPage():
             listEx.makeExpense()
         
         if editChoice == "2":
-            ListEx.deleteExpense()
+            listEx.deleteExpense()
 
         if editChoice == "3":
             menu()
