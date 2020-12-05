@@ -78,7 +78,7 @@ class List():
                 description = x.getDescription()
                 category = x.getCategory()
                 amount = x.getAmount()
-                print (pos,") ",description,":",category,"£",amount)
+                print (pos,") ",description,":",category,": £",amount)
                 pos += 1
             delChoice=input ("Please select which expense to delete (input -1 to exit): ")
             try:
@@ -104,7 +104,21 @@ class List():
                     if n.getCategory() == category:
                         total += float(n.getAmount())
                 print(f"{category}: £{total:.2f}")
-                    
+                
+    def avgSpend(self):
+        total = 0
+        count = 0
+        for i in self.expense:
+            total += float(i.getAmount())
+            count += 1
+        avg = total / count
+        return avg
+    
+    def totalExpenditure(self):
+        total = 0
+        for i in self.expense:
+            total += float(i.getAmount())
+        return total
                     
                     
 
@@ -118,7 +132,7 @@ def menu():
     #Menu options
     #3 options analysis, edit and exit
     while True:
-        print("""Menu:
+        print("""\nMenu:
                 1. Analysis mode
                 2. Edit mode
                 3. Exit\n""")
@@ -135,8 +149,13 @@ def menu():
     
 def analysis():
     #Print category totals, average and totals
-    print("Category totals:")
+    print("\nCategory totals:")
     listEx.categoryTotals()
+    print("\nAverage spend per item:")
+    print(listEx.avgSpend())
+    print("\nTotal expenditure:")
+    print(listEx.totalExpenditure())
+    
     
     
     
